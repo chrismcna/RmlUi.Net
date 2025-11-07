@@ -30,7 +30,8 @@ RMLUI_CAPI const char* rml_ElementDocument_GetSourceURL(Rml::ElementDocument* do
 }
 
 RMLUI_CAPI Rml::ElementPtr* rml_ElementDocument_CreateElement(Rml::ElementDocument* document, const char* name) {
-    return &document->CreateElement(name);
+    auto element = document->CreateElement(name);
+    return &element;
 }
 
 RMLUI_CAPI Rml::Element* rml_ElementDocument_CreateTextNode(Rml::ElementDocument* document, const char* text) {
