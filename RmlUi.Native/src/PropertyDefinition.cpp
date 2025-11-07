@@ -14,7 +14,7 @@ RMLUI_CAPI Rml::PropertyId rml_PropertyDefinition_GetId(Rml::PropertyDefinition*
 RMLUI_CAPI const char* rml_PropertyDefinition_GetValueString(Rml::PropertyDefinition* property_definition, Rml::Property* property, const char* default_value) {
   auto str = new Rml::String();
   if (property_definition->GetValue(*str, *property)) {
-    return _strdup(str->c_str());
+    return strdup(str->c_str());
   }
-  return _strdup(default_value);
+  return strdup(default_value);
 }

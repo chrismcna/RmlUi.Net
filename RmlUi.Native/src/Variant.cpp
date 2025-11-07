@@ -56,5 +56,5 @@ RMLUI_CAPI bool rml_Variant_GetAsBool(Rml::Variant* variant, bool default_value)
 }
 
 RMLUI_CAPI const char* rml_Variant_GetAsString(Rml::Variant* variant, const char* default_value) {
-  return _strdup(variant->Get((Rml::String)default_value).c_str());
+  return strdup(variant->Get((Rml::String)default_value).c_str());
 }

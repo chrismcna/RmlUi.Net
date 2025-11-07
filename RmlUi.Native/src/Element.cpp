@@ -101,7 +101,7 @@ RMLUI_CAPI void rml_Element_SetAttributeString(Rml::Element *element, const char
 }
 
 RMLUI_CAPI const char* rml_Element_GetAttributeString(Rml::Element *element, const char *attr, const char *default_value) {
-    return _strdup(element->GetAttribute<Rml::String>(attr, default_value).c_str());
+    return strdup(element->GetAttribute<Rml::String>(attr, default_value).c_str());
 }
 
 RMLUI_CAPI void rml_Element_SetProperty(Rml::Element *element, const char *name, const char *value) {
@@ -117,7 +117,7 @@ RMLUI_CAPI const Rml::Property* rml_Element_GetPropertyById(Rml::Element *elemen
 }
 
 RMLUI_CAPI const char* rml_Element_GetPropertyString(Rml::Element *element, const char *name) {
-    return _strdup(element->GetProperty(name)->Get<Rml::String>().c_str());
+    return strdup(element->GetProperty(name)->Get<Rml::String>().c_str());
 }
 
 RMLUI_CAPI Rml::Element* rml_Element_GetChild(Rml::Element *element, int index) {
